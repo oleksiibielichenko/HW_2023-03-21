@@ -71,3 +71,12 @@ for i in auto_park:
     i['color'] = random_from(color)
     i['number'] = number_of_engine()
     print(i)
+
+
+def get_name(dictionary):
+    return dictionary['number']
+
+
+auto_park.sort(key=get_name)
+
+print(auto_park)
