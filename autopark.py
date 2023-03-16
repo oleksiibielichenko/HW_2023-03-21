@@ -30,6 +30,8 @@
 
 import random
 
+auto_park = []
+
 label = ['Volkswagen', 'Audi', 'Mercedes-Benz', 'BMW', 'Ford', 'Volvo',
          'Peugeot', 'Renault', 'Daewoo', 'Fiat', 'Seat', 'Chevrolet',
          'Honda', 'Hyundai', 'KIA', 'Mazda', 'Mitsubishi', 'Nissan',
@@ -40,20 +42,12 @@ body_type = ['sedan', 'hatchback', 'universal', 'cross', 'coupe', 'cabriolet']
 color = ['red', 'green', 'black', 'yellow', 'blue', 'white', 'gray']
 
 
-def label_of_auto():
-    return str(label[random.randint(0, len(label)-1)])
-
-
-def body_type_of_auto():
-    return str(body_type[random.randint(0, len(body_type)-1)])
+def random_from(list):
+    return str(list[random.randint(0, len(list)-1)])
 
 
 def price_of_auto():
     return random.randint(20_000, 200_000)
-
-
-def color_of_auto():
-    return str(color[random.randint(0, len(color)-1)])
 
 
 def number_of_engine():
@@ -61,18 +55,19 @@ def number_of_engine():
 
 
 model_of_auto = {
-    'wheels': 4
+    'wheels': 4,
 }
 
-auto_park = []
+numbers_of_auto = int(
+    input("Hello! How much auto in Auto-park would you want? "))
 
-for a in range(15):
+for a in range(numbers_of_auto):
     auto_park.append(model_of_auto)
 
 for i in auto_park:
-    i['label'] = label_of_auto()
-    i['body type'] = body_type_of_auto()
+    i['label'] = random_from(label)
+    i['body type'] = random_from(body_type)
     i['price'] = price_of_auto()
-    i['color'] = color_of_auto()
+    i['color'] = random_from(color)
     i['number'] = number_of_engine()
     print(i)
