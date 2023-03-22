@@ -24,9 +24,9 @@
 # +   medium : [],
 # +   expensive : []
 # + }
-# print( cars that we have : for poor , rich , and medium-lvl persons )
-# input -> sort : color -> choose on of : blue , green , ... ;  price , label
-# for , while
+# + print( cars that we have : for poor , rich , and medium-lvl persons )
+# + input -> sort : color -> choose on of : blue , green , ... ;  price , label
+# + for , while
 
 import random
 
