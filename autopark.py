@@ -42,41 +42,45 @@ body_type = ['sedan', 'hatchback', 'universal', 'cross', 'coupe', 'cabriolet']
 color = ['red', 'green', 'black', 'yellow', 'blue', 'white', 'gray']
 
 
-def random_from(list):
+def random_from(list):  # Function for created random item from list
     return str(list[random.randint(0, len(list)-1)])
 
 
-def price_of_auto():
+def price_of_auto():  # Function for created random price auto
     return random.randint(20_000, 200_000)
 
 
-def number_of_engine():
+def number_of_engine():  # Function for created random number of engine
     return random.randint(100_000_000_000, 999_999_999_999)
 
 
-model_of_auto = {
-    'wheels': 4,
-}
-
+# Ask user, how many auto in Auto-park
 numbers_of_auto = int(
     input("Hello! How much auto in Auto-park would you want? "))
 
-for a in range(numbers_of_auto):
-    auto_park.append(model_of_auto)
-
-for i in auto_park:
-    i['label'] = random_from(label)
-    i['body type'] = random_from(body_type)
-    i['price'] = price_of_auto()
-    i['color'] = random_from(color)
-    i['number'] = number_of_engine()
-    print(i)
-
-
-def get_name(dictionary):
-    return dictionary['number']
+# Create Auto-park from user's numbers_of_auto
+for auto in range(numbers_of_auto):
+    auto_default = {
+        'label': random_from(label),
+        'body type': random_from(body_type),
+        'price': price_of_auto(),
+        'wheels': 4,
+        'color': random_from(color),
+        'number': number_of_engine(),
+    }
+    auto_park.append(auto_default)
 
 
-auto_park.sort(key=get_name)
+print("- - - - - - - - - - - - - - - - -")
+print("Auto-park: ", auto_park[0].values())
+print("Auto-park: ", auto_park[1].values())
+print("Auto-park: ", auto_park[2].values())
 
-print(auto_park)
+
+# def get_name(dictionary):
+#     return dictionary['number']
+
+
+# sorted_auto_park = auto_park.sort(key=get_name)
+
+# print(sorted_auto_park)
